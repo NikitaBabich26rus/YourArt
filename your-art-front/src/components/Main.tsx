@@ -1,11 +1,13 @@
 import Grid from '@mui/material/Grid';
 import React, {FC} from 'react';
 import './../styles/Main.css';
-import {Container, Link, Paper} from "@mui/material";
+import {Link, Paper} from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import Cards from "./Cards";
+import {url} from "inspector";
 
-const Main: FC = () => {
+function Main() {
 
     return (
         <div>
@@ -19,7 +21,7 @@ const Main: FC = () => {
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
-                    backgroundImage: `url(https://source.unsplash.com/random)`,
+                    backgroundImage: `url('https://www.christies.com/img/LotImages/2005/NYR/2005_NYR_01572_0405_000(110208).jpg')`
                 }}
             >
                 <Box
@@ -55,6 +57,7 @@ const Main: FC = () => {
                     </Grid>
                 </Grid>
             </Paper>
+            <Cards/>
         </div>
     )
 }
