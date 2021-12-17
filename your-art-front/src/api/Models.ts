@@ -1,3 +1,125 @@
+
+
+/**
+ *
+ * @export
+ * @interface DeadOrAliveStatistics
+ */
+export interface DeadOrAliveStatistics {
+    /**
+     *
+     * @type {number}
+     * @memberof DeadOrAliveStatistics
+     */
+    deadOrAlive?: any | null;
+    /**
+     *
+     * @type {number}
+     * @memberof DeadOrAliveStatistics
+     */
+    amount?: any;
+}
+
+/**
+ *
+ * @export
+ * @interface GenderStatistics
+ */
+export interface GenderStatistics {
+    /**
+     *
+     * @type {number}
+     * @memberof GenderStatistics
+     */
+    gender?: any | null;
+    /**
+     *
+     * @type {number}
+     * @memberof GenderStatistics
+     */
+    amount?: any;
+}
+
+/**
+ *
+ * @export
+ * @interface YearsOfSoldPictures
+ */
+export interface YearsOfSoldPictures {
+    /**
+     *
+     * @type {number}
+     * @memberof YearsOfSoldPictures
+     */
+    year?: any | null;
+    /**
+     *
+     * @type {number}
+     * @memberof YearsOfSoldPictures
+     */
+    amountPictures?: any;
+}
+
+/**
+ *
+ * @export
+ * @interface NationalityStatistics
+ */
+export interface NationalityStatistics {
+    /**
+     *
+     * @type {string}
+     * @memberof NationalityStatistics
+     */
+    nationality?: any | null;
+    /**
+     *
+     * @type {number}
+     * @memberof NationalityStatistics
+     */
+    amount?: any;
+}
+
+/**
+ *
+ * @export
+ * @interface TechniqueStatistics
+ */
+export interface TechniqueStatistics {
+    /**
+     *
+     * @type {string}
+     * @memberof TechniqueStatistics
+     */
+    name?: any | null;
+    /**
+     *
+     * @type {number}
+     * @memberof TechniqueStatistics
+     */
+    amount?: any;
+}
+
+/**
+ *
+ * @export
+ * @interface CityStatistics
+ */
+export interface CityStatistics {
+    /**
+     *
+     * @type {string}
+     * @memberof CityStatistics
+     */
+    name?: any | null;
+    /**
+     *
+     * @type {number}
+     * @memberof CityStatistics
+     */
+    amount?: any;
+}
+
 export interface ArtsModel {
     /**
      *

@@ -25,6 +25,8 @@ namespace YourArt
             services.AddDbContext<ArtsDbContext>(options => options.UseSqlServer(connection));
             services.AddScoped<IArtsRepository, ArtsRepository>();
             services.AddScoped<IArtsService, ArtsService>();
+            services.AddScoped<IArtsStatisticsRepository, ArtsStatisticsRepository>();
+            services.AddScoped<IArtsStatisticsService, ArtsStatisticsService>();
             services.AddControllers();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "YourArt", Version = "v1" }); });
             services.AddCors();
