@@ -1,4 +1,23 @@
 
+/**
+ *
+ * @export
+ * @interface SimilarArts
+ */
+export interface SimilarArts {
+    /**
+     *
+     * @type {number}
+     * @memberof SimilarArts
+     */
+    id?: number | null;
+    /**
+     *
+     * @type {number}
+     * @memberof SimilarArts
+     */
+    artName?: string;
+}
 
 /**
  *
@@ -111,7 +130,7 @@ export interface CityStatistics {
      * @type {string}
      * @memberof CityStatistics
      */
-    name?: any | null;
+    city?: any | null;
     /**
      *
      * @type {number}

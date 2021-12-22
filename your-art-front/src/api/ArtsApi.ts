@@ -21,6 +21,17 @@ export default class ArtsApi {
         const response = await axios.get(this._basePath + '/api/Arts/getArtsPage/' + pageNumber)
         return response.data
     }
+
+    public getSimilarArts = async () => {
+        const response = await axios.get(this._basePath + '/api/Arts/getSimilarArts')
+        return response.data
+    }
+
+    public getArtsOfTheSameCity = async (city: string, currentPage: number) => {
+        const response = await axios.get(this._basePath + '/api/Arts/getArtsOfTheSameCity/'
+            + city + '/' + currentPage)
+        return response.data
+    }
 }
 
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using YourArt.Models;
 using YourArt.Repositories;
 
 namespace YourArt.Services
@@ -34,6 +35,13 @@ namespace YourArt.Services
             });
             return arts;
         }
+
+        public async Task<IEnumerable<SimilarArts>> GetSimilarArts()
+            => (await _artsRepository.GetSimilarArts())
+            .Select(x => new SimilarArts(x.Id, x.Art1));
+
+        public async Task<IEnumerable<Arts>> GetArtsOfTheSameCity(string city, int currentPage, int amountArtsOnPage)
+            => await _artsRepository.GetArtsOfTheSameCity(city, currentPage, amountArtsOnPage);
 
         private string SetAuthorName(string authorName)
             => String.Join(" ", authorName.Split(' ')

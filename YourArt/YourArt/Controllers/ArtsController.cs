@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using YourArt.Models;
 using YourArt.Services;
 
 namespace YourArt.Controllers
@@ -28,5 +29,13 @@ namespace YourArt.Controllers
         [HttpGet("getArtsPage/{currentPage}")]
         public async Task<IEnumerable<Arts>> GetPageContent(int currentPage)
             => await _artsService.GetPageContent(currentPage, _amountArtsOnPage);
+
+        [HttpGet("getSimilarArts")]
+        public async Task<IEnumerable<SimilarArts>> GetSimilarArts()
+            => await _artsService.GetSimilarArts();
+
+        [HttpGet("getArtsOfTheSameCity/{city}/{currentPage}")]
+        public async Task<IEnumerable<Arts>> GetArtsOfTheSameCity(string city, int currentPage)
+            => await _artsService.GetArtsOfTheSameCity(city, currentPage, _amountArtsOnPage);
     }
 }

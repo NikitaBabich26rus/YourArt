@@ -11,6 +11,7 @@ import {Link} from "@mui/material";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Grid from "@mui/material/Grid";
+import SearchField from "./SearchField";
 
 const Header: FC = () => {
 
@@ -39,7 +40,7 @@ const Header: FC = () => {
                                 <Link
                                     component="button"
                                     onClick={() => window.location.assign("/")}
-                                    sx={{flexGrow: 1}}
+                                    sx={{flexGrow: 1, color: '#e0e0e0'}}
                                     variant="h6"
                                     underline="hover"
                                     color="inherit"
@@ -49,12 +50,15 @@ const Header: FC = () => {
                             </Typography>
                         </Grid>
                         <Grid item>
+                            <SearchField/>
+                        </Grid>
+                        <Grid item>
                             <IconButton
                                 size="large"
                                 edge="start"
-                                color="inherit"
                                 aria-label="menu"
                                 onClick={handleClick}
+                                sx={{ color: '#e0e0e0' }}
                             >
                                 <MenuIcon/>
                             </IconButton>
@@ -63,11 +67,15 @@ const Header: FC = () => {
                                 keepMounted
                                 open={Boolean(anchorEl)}
                                 onClose={handleClose}
+                                sx={{ color: '#e0e0e0' }}
                             >
-                                <MenuItem onClick={() => window.location.assign("/statistics")}>
+                                <MenuItem
+                                    onClick={() => window.location.assign("/statistics")}
+                                    sx={{ color: '#e0e0e0' }}
+                                >
                                     Statistics
                                 </MenuItem>
-                                <MenuItem>
+                                <MenuItem sx={{ color: '#e0e0e0' }}>
                                     Account
                                 </MenuItem>
                             </Menu>

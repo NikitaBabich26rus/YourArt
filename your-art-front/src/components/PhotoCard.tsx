@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import Grid from "@mui/material/Grid";
 import {Card, CardActionArea, CardContent, CardMedia} from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -6,11 +6,15 @@ import {grey} from "@mui/material/colors";
 import {ArtsModel} from "../api/Models";
 
 const PhotoCard: FC<ArtsModel> = (props) => {
+
     return (
         <Grid item xs={12} md={6}>
-            <CardActionArea component="a" onClick={() => window.location.assign('/art/' + props.id)}>
-                <Card sx={{ display: 'flex', backgroundColor: grey[900] }}>
-                    <CardContent sx={{flex: 1, color: '#fff'}}>
+            <CardActionArea
+                component="a"
+                onClick={() => window.location.assign('/art/' + props.id)}
+            >
+                <Card sx={{ display: 'flex', backgroundColor: grey[900], height: '200px' }}>
+                    <CardContent sx={{ flex: 1, color: '#e0e0e0' }}>
                         <Typography component="h2" color="inherit" variant="h5">
                             {props.art1}
                         </Typography>
@@ -32,4 +36,4 @@ const PhotoCard: FC<ArtsModel> = (props) => {
     );
 };
 
-export default PhotoCard;
+export default React.memo(PhotoCard);

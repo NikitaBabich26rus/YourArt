@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using YourArt.Models;
 
 namespace YourArt.Services
 {
@@ -11,5 +12,8 @@ namespace YourArt.Services
 
         Task<IEnumerable<Arts>> GetPageContent(int currentPage, int amountArtsOnPage);
 
+        Task<IEnumerable<SimilarArts>> GetSimilarArts();
+
+        Task<IEnumerable<Arts>> GetArtsOfTheSameCity(string city, int currentPage, int amountArtsOnPage);
     }
 }

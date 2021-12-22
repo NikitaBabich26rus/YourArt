@@ -14,16 +14,16 @@ import {
     NationalityStatistics,
     TechniqueStatistics,
     YearsOfSoldPictures
-} from "../api/Models";
-import ApiSingleton from "../api/Api";
+} from "../../api/Models";
+import ApiSingleton from "../../api/Api";
 import ActiveShapeCities from './ActiveShapeCities';
 import ActiveShapeTechnique from "./ActiveShapeTechnique";
 import Grid from '@mui/material/Grid';
+import CitiesStatistics from "./CitiesStatistics";
 
 
 const Statistics: FC = () => {
 
-    const [cityStatistics, setCityStatistics] = useState<CityStatistics[]>([])
     const [techniquesStatistics, setTechniquesStatistics] = useState<TechniqueStatistics[]>([])
     const [nationalityStatistics, setNationalityStatistics] = useState<NationalityStatistics[]>([])
     const [yearsStatistics, setYearsStatistics] = useState<YearsOfSoldPictures[]>([])
@@ -31,12 +31,10 @@ const Statistics: FC = () => {
     const [genderStatistics, setGenderStatistics] = useState<GenderStatistics[]>([])
 
 
-    const [activeIndexCities, setActiveIndexCities] = useState<number>(0)
     const [activeIndexTechnique, setActiveIndexTechnique] = useState<number>(0)
 
 
     useEffect(() => {
-        getCityStatistics()
         getTechniquesStatistics()
         getNationalityStatistics()
         getYearsStatistics()
@@ -57,11 +55,6 @@ const Statistics: FC = () => {
     const getTechniquesStatistics = async () => {
         const result = await ApiSingleton._artsStatisticsApi.getTechniquesStatistics()
         setTechniquesStatistics(result)
-    }
-
-    const getCityStatistics = async () => {
-        const result = await ApiSingleton._artsStatisticsApi.getCityStatistics()
-        setCityStatistics(result)
     }
 
     const getDeadOrAliveStatistics = async () => {
@@ -95,31 +88,7 @@ const Statistics: FC = () => {
     return (
         <Container maxWidth="md" sx={{marginTop: '20px', color: '#e0e0e0'}}>
             <Grid container sx={{marginTop: '40px'}} justifyContent='center'>
-                <Grid item>
-                    <Typography variant="h4">
-                        Statistics on the sales of paintings in cities
-                    </Typography>
-                </Grid>
-                {cityStatistics.length !== 0 && (
-                    <Grid item xs={12}>
-                        <ResponsiveContainer aspect={2} width="100%" height="100%">
-                            <PieChart width={400} height={400}>
-                                <Pie
-                                    activeIndex={activeIndexCities}
-                                    activeShape={ActiveShapeCities}
-                                    data={cityStatistics}
-                                    cx="50%"
-                                    cy="50%"
-                                    innerRadius={120}
-                                    outerRadius={160}
-                                    fill="#8884d8"
-                                    dataKey="amount"
-                                    onMouseEnter={(_, index) => setActiveIndexCities(index)}
-                                />
-                            </PieChart>
-                        </ResponsiveContainer>
-                    </Grid>
-                )}
+                <CitiesStatistics/>
                 <Grid item>
                     <Typography variant="h4">
                         Painting technique statistics
@@ -206,7 +175,7 @@ const Statistics: FC = () => {
                     </Grid>
                 )}
                 <Grid item>
-                    <Grid container xs={12} justifyContent="space-between" sx={{ marginTop: "20px" }}>
+                    <Grid container xs={12} justifyContent="space-between" sx={{marginTop: "20px"}}>
                         {genderStatistics.length !== 0 && (
                             <Grid item xs={12} md={6}>
                                 <Typography variant="h5">

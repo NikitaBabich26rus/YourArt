@@ -10,5 +10,9 @@ namespace YourArt.Repositories
         Task<Arts> GetArtById(int id);
 
         Task<List<Arts>> GetPageContent(int currentPage, int amountArts);
+
+        Task<List<Arts>> GetSimilarArts();
+
+        Task<List<Arts>> GetArtsOfTheSameCity(string city, int currentPage, int amountArtsOnPage);
     }
 }

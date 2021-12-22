@@ -5,6 +5,7 @@ import ApiSingleton from "../api/Api";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
+import {Link} from "@mui/material";
 
 interface IArtProps {
     id: string,
@@ -16,13 +17,12 @@ const Art: FC<RouteComponentProps<IArtProps>> = (props) => {
 
     const getArtById = async () => {
         const art = await ApiSingleton._artsApi.getArtById(+props.match.params.id)
-        debugger
         setArt(art)
     }
 
     useEffect(()=> {
         getArtById()
-    }, [])
+    }, [props])
 
     return (
         <Container maxWidth="md" style={{ marginTop: '20px', color: '#e0e0e0' }} >
@@ -61,6 +61,14 @@ const Art: FC<RouteComponentProps<IArtProps>> = (props) => {
                     </Typography>
                     <Typography variant="h6">
                         Technique: {art.technique}
+                    </Typography>
+                    <Typography variant="h6">
+                        Price: {art.price}USD
+                    </Typography>
+                    <Typography variant="h6">
+                        <Link href={art.triedUrl} underline="hover">
+                            Site
+                        </Link>
                     </Typography>
                 </Grid>
                 <Grid item xs={12}>

@@ -5,7 +5,8 @@ import Main from "./components/Main";
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 
 import Art from "./components/Art";
-import Statistics from "./components/Statistics";
+import Statistics from "./components/Statistics/Statistics";
+import FilterPageCities from "./components/Statistics/FilterPageCities";
 
 const App: FC = () => {
     const [mode, setMode] = React.useState<'light' | 'dark'>('dark')
@@ -38,6 +39,7 @@ const App: FC = () => {
                 </Route>
                 <Route path="/art/:id" exact component={Art}/>
                 <Route path="/statistics" exact component={Statistics}/>
+                <Route path="/statistics-cities/:city" exact component={FilterPageCities}/>
             </div>
         </ThemeProvider>
     )

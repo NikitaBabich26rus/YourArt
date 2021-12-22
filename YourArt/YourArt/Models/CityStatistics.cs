@@ -1,4 +1,6 @@
-﻿namespace YourArt.Models
+﻿using System.Collections.Generic;
+
+namespace YourArt.Models
 {
     public class CityStatistics
     {
