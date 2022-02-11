@@ -32,7 +32,7 @@ const FilterPageCities: FC<RouteComponentProps<IFilterPageCites>> = (props) => {
         <Container maxWidth="md">
             <Grid sx={{ textAlign: 'center', marginTop: '20px', color: '#e0e0e0' }}>
                 <Typography variant='h4' >
-                    Paintings sold in {city}
+                    Statistics on the sales of paintings in cities: {city}
                 </Typography>
             </Grid>
             <Grid container spacing={2} sx={{ marginTop: '20px' }}>

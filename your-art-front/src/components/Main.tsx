@@ -43,16 +43,12 @@ function Main() {
                                 pr: { md: 0 },
                             }}
                         >
-                            <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                                YourArt
+                            <Typography component="h1" variant="h2" sx={{ color: '#e0e0e0' }} gutterBottom>
+                                YourArt a web-site for visualizing art datasets
                             </Typography>
-                            <Typography variant="h5" color="inherit" paragraph>
-                                Multiple lines of text that form the lede, informing new readers
-                                quickly and efficiently about what's most interesting in this post's contents.
-                            </Typography>
-                            <Link variant="subtitle1" color="inherit" href="#">
-                                Continue reading…
-                            </Link>
+                            {/*<Typography variant="h5" color="inherit" paragraph>
+                                YourArt a site for visualizing art datasets
+                            </Typography>*/}
                         </Box>
                     </Grid>
                 </Grid>
